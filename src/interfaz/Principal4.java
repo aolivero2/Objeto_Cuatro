@@ -21,6 +21,11 @@ public class Principal4 extends javax.swing.JFrame {
     int longit;
     public Principal4() {
         initComponents();
+        cmdBorrar.setEnabled(true);
+        cmdCambiarContraseña.setEnabled(false);
+        cmdGuardar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+        cmdProbarContraseña.setEnabled(false);
     }
 
     /**
@@ -163,6 +168,13 @@ public class Principal4 extends javax.swing.JFrame {
         cont=new Password (contrs,longit);
         mos=cont.mostcont();
         txtResultado.setText("Su password es: "+mos.getContraseña());
+        
+        cmdBorrar.setEnabled(true);
+        cmdCambiarContraseña.setEnabled(true);
+        cmdGuardar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+        cmdProbarContraseña.setEnabled(true);
+        
          }
         
     }//GEN-LAST:event_cmdMostrarActionPerformed
@@ -176,6 +188,12 @@ public class Principal4 extends javax.swing.JFrame {
         
         seg=cont.contraseñaf();
         txtResultado.setText(seg);
+        
+        cmdBorrar.setEnabled(false);
+        cmdCambiarContraseña.setEnabled(false);
+        cmdGuardar.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdProbarContraseña.setEnabled(true);
         
        
     }//GEN-LAST:event_cmdProbarContraseñaActionPerformed
@@ -197,8 +215,10 @@ public class Principal4 extends javax.swing.JFrame {
          txtResultado.setText("");
          }else{
              cmdMostrar.setEnabled(true);
-             cmdGuardar.setEnabled(false);
-             cmdCambiarContraseña.setEnabled(true);
+             cmdGuardar.setEnabled(true);
+             cmdCambiarContraseña.setEnabled(false);
+             cmdBorrar.setEnabled(true);
+             cmdProbarContraseña.setEnabled(true);
          }
       
        
@@ -216,6 +236,12 @@ public class Principal4 extends javax.swing.JFrame {
          longit=contrs.length();
            cont= new Password (contrs,longit);
           JOptionPane.showMessageDialog(this, "Su password se guardo exitosamente");
+          
+         cmdBorrar.setEnabled(true);
+        cmdCambiarContraseña.setEnabled(true);
+        cmdGuardar.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdProbarContraseña.setEnabled(true);
          }
          
     }//GEN-LAST:event_cmdGuardarActionPerformed
@@ -224,6 +250,12 @@ public class Principal4 extends javax.swing.JFrame {
          txtCont.setText("");
          txtResultado.setText("");
          txtCont.requestFocusInWindow();
+         
+        cmdBorrar.setEnabled(false);
+        cmdCambiarContraseña.setEnabled(false);
+        cmdGuardar.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+        cmdProbarContraseña.setEnabled(false);
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
