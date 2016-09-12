@@ -17,8 +17,8 @@ public class Principal4 extends javax.swing.JFrame {
     /**
      * Creates new form Principal4
      */
-    String c;
-    int l;
+    String contrs;
+    int longit;
     public Principal4() {
         initComponents();
     }
@@ -35,34 +35,38 @@ public class Principal4 extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtCont = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         cmdCambiarContraseña = new javax.swing.JButton();
-        Mostrar = new javax.swing.JButton();
+        cmdMostrar = new javax.swing.JButton();
         cmdGuardar = new javax.swing.JButton();
         cmdBorrar = new javax.swing.JButton();
         cmdProbarContraseña = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtResultado = new javax.swing.JTextArea();
+        txtCont = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 0, 153));
         jLabel1.setText(" PASSWORD");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 110, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 150, 40));
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 102, 51));
         jLabel2.setText("Digite su contraseña:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
-        jPanel1.add(txtCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 150, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 102, 51))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmdCambiarContraseña.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdCambiarContraseña.setForeground(new java.awt.Color(153, 102, 255));
         cmdCambiarContraseña.setText("Cambiar contraseña");
         cmdCambiarContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,16 +75,18 @@ public class Principal4 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdCambiarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 160, 30));
 
-        Mostrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        Mostrar.setText("Mostrar");
-        Mostrar.addActionListener(new java.awt.event.ActionListener() {
+        cmdMostrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdMostrar.setForeground(new java.awt.Color(153, 102, 255));
+        cmdMostrar.setText("Mostrar");
+        cmdMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MostrarActionPerformed(evt);
+                cmdMostrarActionPerformed(evt);
             }
         });
-        jPanel2.add(Mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, 30));
+        jPanel2.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, -1, 30));
 
         cmdGuardar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdGuardar.setForeground(new java.awt.Color(153, 102, 255));
         cmdGuardar.setText("Guardar");
         cmdGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +96,7 @@ public class Principal4 extends javax.swing.JFrame {
         jPanel2.add(cmdGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 80, 30));
 
         cmdBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdBorrar.setForeground(new java.awt.Color(153, 102, 255));
         cmdBorrar.setText("Borrar");
         cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +105,9 @@ public class Principal4 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 80, 30));
 
+        cmdProbarContraseña.setBackground(new java.awt.Color(255, 255, 255));
         cmdProbarContraseña.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdProbarContraseña.setForeground(new java.awt.Color(153, 102, 255));
         cmdProbarContraseña.setText("Probar si la contraseña es fuerte");
         cmdProbarContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,9 +118,11 @@ public class Principal4 extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 260, 240));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contraseña:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPanel3.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Contraseña:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 102, 51))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        txtResultado.setBackground(new java.awt.Color(204, 255, 204));
         txtResultado.setColumns(20);
         txtResultado.setRows(5);
         jScrollPane1.setViewportView(txtResultado);
@@ -119,6 +130,9 @@ public class Principal4 extends javax.swing.JFrame {
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 190, 160));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 230, 210));
+
+        txtCont.setBackground(new java.awt.Color(204, 255, 204));
+        jPanel1.add(txtCont, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 140, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -137,34 +151,79 @@ public class Principal4 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarActionPerformed
+    private void cmdMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMostrarActionPerformed
+        Password mos,cont;
+         if (txtCont.getText().trim().isEmpty()){
+           JOptionPane.showMessageDialog(this,"Digite su contraseña","Error",JOptionPane.ERROR_MESSAGE);
+           txtCont.requestFocusInWindow();
+         }else{
+        contrs=txtCont.getText();
+        longit=contrs.length();
         
-    }//GEN-LAST:event_MostrarActionPerformed
+        cont=new Password (contrs,longit);
+        mos=cont.mostcont();
+        txtResultado.setText("Su password es: "+mos.getContraseña());
+         }
+        
+    }//GEN-LAST:event_cmdMostrarActionPerformed
 
     private void cmdProbarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdProbarContraseñaActionPerformed
-        // TODO add your handling code here:
+        String seg;
+        Password cont;
+        contrs=txtCont.getText();
+        longit=contrs.length();
+        cont= new Password (contrs,longit);
+        
+        seg=cont.contraseñaf();
+        txtResultado.setText(seg);
+        
+       
     }//GEN-LAST:event_cmdProbarContraseñaActionPerformed
 
     private void cmdCambiarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCambiarContraseñaActionPerformed
-        // TODO add your handling code here:
+        Password cont;
+        String aux,conts=null,ln;
+        int res;
+        
+        res= JOptionPane.showConfirmDialog(this, "Seguro que desea cambiar la contraseña?","Pregunta",JOptionPane.YES_NO_OPTION);
+         if (res==JOptionPane.YES_OPTION){
+             aux=conts;
+             txtCont.setText("");
+             txtResultado.setText("");
+         ln=JOptionPane.showInputDialog(this,"Digite por favor su nueva contraseña");
+         longit=ln.length();
+         cont=new Password (ln,longit);
+         txtCont.setText(ln);
+         txtResultado.setText("");
+         }else{
+             cmdMostrar.setEnabled(true);
+             cmdGuardar.setEnabled(false);
+             cmdCambiarContraseña.setEnabled(true);
+         }
+      
+       
     }//GEN-LAST:event_cmdCambiarContraseñaActionPerformed
 
     private void cmdGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGuardarActionPerformed
+        String contrs;
+        int longit;
         Password cont;
          if (txtCont.getText().trim().isEmpty()){
              JOptionPane.showMessageDialog(this, "Digite por favor su password","Error",JOptionPane.ERROR_MESSAGE);
              txtCont.requestFocusInWindow();
          }else{
-           l=c.length();
-           c=txtCont.getText();
-           cont= new Password (c,l);
-          JOptionPane.showConfirmDialog(this, "Su password se guardo exitosamente");
+         contrs=txtCont.getText();
+         longit=contrs.length();
+           cont= new Password (contrs,longit);
+          JOptionPane.showMessageDialog(this, "Su password se guardo exitosamente");
          }
          
     }//GEN-LAST:event_cmdGuardarActionPerformed
 
     private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
-        // TODO add your handling code here:
+         txtCont.setText("");
+         txtResultado.setText("");
+         txtCont.requestFocusInWindow();
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
@@ -203,10 +262,10 @@ public class Principal4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Mostrar;
     private javax.swing.JButton cmdBorrar;
     private javax.swing.JButton cmdCambiarContraseña;
     private javax.swing.JButton cmdGuardar;
+    private javax.swing.JButton cmdMostrar;
     private javax.swing.JButton cmdProbarContraseña;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -214,7 +273,7 @@ public class Principal4 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtCont;
+    private javax.swing.JPasswordField txtCont;
     private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
 }
